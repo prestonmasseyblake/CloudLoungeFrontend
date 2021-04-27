@@ -33,7 +33,7 @@ function CreateLounge() {
 
         // axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('content');
         axios({
-        url: 'http://localhost:8000/api/create/lounges',
+        url: 'https://cloudloungebackend.herokuapp.com/api/create/lounges',
         data: form_data,
         method: 'post',
         headers: {
