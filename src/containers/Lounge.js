@@ -2,8 +2,16 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Video from '../components/youtubeVideo';
-
+import YoutubeWidget from '../containers/YouTubeWidget';
+import Reddit from './RedditSearch/Reddit';
+import Spotify from './SpotifySearch/Spotify';
+import './Lounge.css';
 const Lounge = (props) => {
+    const [youtube, setYouTube] = useState(false);
+    const [bitcoin, setBitcoin] = useState(false);
+    const [amazon, setAmazon] = useState(false);
+    const [spotify, setSpotify] = useState(false);
+    const [tiktok, setTiktok] = useState(false);
     const [page, setPage] = useState({});
     useEffect(() => {
         const slugv = props.match.params.id;
@@ -20,21 +28,87 @@ const Lounge = (props) => {
     },[props.match.params.id]);
     
     const pageStyle = {
-        backgroundImage: `url(${page.picture})`,
-        backgroundSize: 'cover',
         
-        width: '100vw',
-        height: '100vh'
     } 
+    const displayYoutube = () => {
+        
+        if(page.isYoutube === true) {
+            
+            return ( 
+                <div>
+                    <YoutubeWidget/>
+                </div>
+            )
+        }
+    }
+
+    const displayBitcoin = () => {
+        
+        if(page.isBitcoin === true) {
+            console.log('display bitcoin')
+            return ( 
+                <div>
+                    
+                    <a href='https://cex.io'><img src='https://cex.io/widget/dark/300/btc-usd' width='300' height='250' /></a>
+                </div>
+            )
+        }
+    }
+
+    const displayAmazon = () => {
+        
+        if(page.isAmazon === true) {
+            console.log('display amazon')
+            return ( 
+                <div>
+                    <Reddit/>
+                </div>
+            )
+        }
+    }
+
+    const displaySpotify = () => {
+        console.log('display spotify')
+        if(page.isSpotify === true) {
+            return ( 
+                <div>
+                    
+                    <Spotify/>
+                </div>
+            )
+        }
+    }
+
+    const displayTiktok = () => {
+        console.log('display tiktok')
+        if(page.isTiktok === true) {
+            return ( 
+                <div>
+                    Tiktok
+            <div style={{overflow: 'hidden', marginTop: '-100px', marginLeft: '-15px'}}>
+            
+</div>
+                </div>
+            )
+        }
+    }
 
     return (
-        <div style={pageStyle}>
-            <button className="btn btn-primary btn-success">
+        <div >
+            <div className='container-fluid'>
+            {/* <button className="btn btn-primary btn-success">
             <Link to={`/edit/${page.slug}`}>Editer</Link>
-            </button>
-            <h1 className="text-center" style={{color: 'red'}}>{page.name}</h1>
-            <p>Lounge</p>
+            </button> */}
+            <h1 className="text-center">{page.name}</h1>
+            <div className='page-picture'><img src={page.picture} />
+            </div>
+            {displayYoutube()}
+            {displayAmazon()}
+            {displayBitcoin()}
+            {displayTiktok()}
+            {displaySpotify()}
             
+            </div>
         </div>
     )
 }

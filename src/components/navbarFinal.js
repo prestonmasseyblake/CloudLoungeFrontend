@@ -18,12 +18,16 @@ function NavBarFinal({}) {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
+        <Link className='main-logo' to='/'>
+        <div className='logo'>
+         ☁️
+        </div>
+        </Link>
         <NavItem icon={<Search/>} />
           <Link to='/create' ><NavItem icon={<PlusIcon/>} /></Link>
-          
           <Link to='/' ><NavItem icon={< BellIcon/>} /></Link>
-          
           <NavItem icon={<MessengerIcon/>} />
+          <Link to='/settings' ><NavItem icon={< CogIcon/>} /></Link>
           <div className='profile'>
             <img src={Peep} />
           </div>

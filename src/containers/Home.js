@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import Slider from '../components/Swiper';
 import axios from 'axios';
 import Lounges from '../components/Lounges';
-
 import Search from '../components/Search';
 function Home() {
     const popularUrl = 'https://cloudloungebackend.herokuapp.com/api/create/lounges';
@@ -11,6 +10,7 @@ function Home() {
         <div className='home'>
             <div className='container-fluid'>
             <Search/>
+            
             <Lounges url={popularUrl}/>
             <Lounges url={popularUrl}/>
             <div className='jumbotron'>

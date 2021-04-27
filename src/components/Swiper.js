@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import {Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import Peep from '../components/peep.jpg';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -31,19 +31,29 @@ const Slider = ({lounges}) => {
         lounges.map(lounge => {
           
             return display.push(
-                <div  className=''>
-                
-                <SwiperSlide><Link to={`/${lounge.slug}`}> 
+                <div className='card-container'>
+                <SwiperSlide> 
+                    <div  className='lounge-card'>
                     <div class="showcase-box">
-                   <img src={lounge.picture}/>
-
+                    <Link to={`/${lounge.slug}`}> <img src={lounge.picture}/></Link>
                </div>
+               <div className='details'>
                <h3>{lounge.name}</h3>
-               <p></p>
-                    </Link>
-                    </SwiperSlide>
+               <div className='author'>
+                 <img class="card-author" src={Peep} />
+                 <p>Mike Smith</p>
+               </div>
+               <div>
+                 <p>20 seats</p>
+               </div>
+               </div>
+              
+               </div>
                     
-                </div>
+                    </SwiperSlide>
+                    </div>
+                    
+              
             );
         });
         return display;
@@ -72,7 +82,7 @@ const Slider = ({lounges}) => {
           width: 765,
           slidesPerView: 2,
         }}}
-      pagination={{ clickable: true }}
+      pagination={{ clickable: false }}
     //   scrollbar={{ draggable: false }}
     >
       {displayLounges()}

@@ -21,6 +21,7 @@ function Lounges({url}) {
     return (
         <div>
             <Swiper lounges={popLounges}/>
+        
         </div>
     )
 }

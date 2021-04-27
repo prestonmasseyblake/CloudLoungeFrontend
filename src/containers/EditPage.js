@@ -226,8 +226,7 @@ const EditPage = (props) => {
             <Col>
             <div style={{display: 'flex'}}>
             {items
-             .map((i, idx) => <Item key={i.id} item={i} index={idx} moveItem={moveItem} status={'open'} />)
-                                }
+             .map((i, idx) => <Item key={i.id} item={i} index={idx} moveItem={moveItem} status={'open'} />)}
             </div>
             </Col>
             <button onClick={(e) => handleSubmit(e)} style={submitStyle} className='btn btn-primary btn-warning'>Save Changes</button>
