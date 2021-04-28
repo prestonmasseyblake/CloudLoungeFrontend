@@ -9,13 +9,14 @@ import Cookies from 'js-cookie';
 import YoutubeWidget from '../containers/YouTubeWidget';
 import Reddit from './RedditSearch/Reddit';
 import Spotify from './SpotifySearch/Spotify';
-
+import {Redirect} from 'react-router-dom';
 const EditPage = (props) => {
     const [youtube, setYouTube] = useState(false);
     const [bitcoin, setBitcoin] = useState(false);
     const [amazon, setAmazon] = useState(false);
     const [spotify, setSpotify] = useState(false);
     const [tiktok, setTiktok] = useState(false);
+    const [redirect,setRedirect] = useState(false);
     //setting the info from the api
     const [page, setPage] = useState({});
     //items for the drag and drop
@@ -149,6 +150,7 @@ const EditPage = (props) => {
         headers: new Headers({"Content-Type": "application/json", 'X-CSRFToken': cookies.csrftoken})
       }).then(res=> {
           console.log(res.data);
+          setRedirect(true);
           
       }).catch(err => {console.log("this is the error", err.message)});
 
@@ -186,6 +188,11 @@ const EditPage = (props) => {
         left: '50%',
         transform: 'translateX(-50%)'
     }
+    let RedirectPage = () => {
+        if(redirect === true) {
+            return <Redirect to={`/edit/${page.name}`} />
+        }
+    } 
     return (
         <div style={{width: '100vw',backgroundColor: 'white', height: 'auto'}}>
             <div style={pageStyle}>
