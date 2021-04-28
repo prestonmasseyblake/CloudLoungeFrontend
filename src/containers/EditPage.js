@@ -178,7 +178,7 @@ const EditPage = (props) => {
         bottom: '0px',
         position: 'fixed',
         width: '100%',
-        height: '200px',
+        height: '100px',
         backgroundColor: 'green'
     }
     const submitStyle = {
@@ -189,8 +189,9 @@ const EditPage = (props) => {
         transform: 'translateX(-50%)'
     }
     let RedirectPage = () => {
+        console.log('trying');
         if(redirect === true) {
-            return <Redirect to={`/edit/${page.name}`} />
+            return <Redirect to={`/`} />
         }
     } 
     return (

@@ -63,8 +63,8 @@ const YouTubeWidget = () => {
                     borderRadius: '10px',
                     cursor: 'pointer',
                     color: 'white',
-                    height: '200px',
-                    width: '200px',
+                    height: '100px',
+                    width: '100px',
                     backgroundSize: 'cover',
                 }} > 
                     <VideoDetail video={s} />

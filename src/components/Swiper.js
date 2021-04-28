@@ -35,7 +35,9 @@ const Slider = ({lounges}) => {
                 <SwiperSlide> 
                     <div  className='lounge-card'>
                     <div class="showcase-box">
-                    <Link to={`/${lounge.slug}`}> <img src={lounge.picture}/></Link>
+                     
+                    <Link style={{ textDecoration: 'none' }} to={`/${lounge.slug}`}> <img src={lounge.picture}/></Link>
+                    
                </div>
                <div className='details'>
                <h3>{lounge.name}</h3>

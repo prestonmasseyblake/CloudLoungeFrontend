@@ -213,3 +213,7 @@ select {
   background-color: #ffffff;
   opacity: 0;
 }
+.container-fluid {
+  padding:0 !important;
+  margin: 0;
+}

@@ -6,6 +6,7 @@ import YoutubeWidget from '../containers/YouTubeWidget';
 import Reddit from './RedditSearch/Reddit';
 import Spotify from './SpotifySearch/Spotify';
 import './Lounge.css';
+import SubNav from '../components/loungeNav/Nav';
 const Lounge = (props) => {
     const [youtube, setYouTube] = useState(false);
     const [bitcoin, setBitcoin] = useState(false);
@@ -13,6 +14,7 @@ const Lounge = (props) => {
     const [spotify, setSpotify] = useState(false);
     const [tiktok, setTiktok] = useState(false);
     const [page, setPage] = useState({});
+    const [name, setName] = useState('');
     useEffect(() => {
         const slugv = props.match.params.id;
         console.log('slig is ',slugv);
@@ -20,6 +22,7 @@ const Lounge = (props) => {
         axios.get(`https://cloudloungebackend.herokuapp.com/api/create/edit/${slugv}`)
         .then(res => {
             setPage(res.data);
+            setName(page.name);
             console.log('page',page);
         })
         .catch(err => {
@@ -95,6 +98,7 @@ const Lounge = (props) => {
 
     return (
         <div >
+            <SubNav name={name}/>
             <div className='container-fluid'>
             <button className="btn btn-primary btn-success">
             <Link to={`/edit/${page.slug}`}>Editer</Link>

@@ -2,7 +2,7 @@ const data = [{
     id: 1,
     icon: "⭕️",
     status: "open",
-    widget: "fab fa-reddit fa-10x",
+    widget: "fab fa-reddit fa-2x",
     name: "amazon",
     title: "Human Interest Form",
     content: "Fill out human interest distribution form"
@@ -10,7 +10,7 @@ const data = [{
     id: 2,
     icon: "⭕️",
     status: "open",
-    widget: "fab fa-bitcoin fa-10x",
+    widget: "fab fa-bitcoin fa-2x",
     name: "bitcoin",
     title: "Purchase present",
     content: "Get an anniversary gift"
@@ -18,7 +18,7 @@ const data = [{
     id: 3,
     icon: "⭕️",
     status: "open",
-    widget: "fab fa-tiktok fa-10x",
+    widget: "fab fa-tiktok fa-2x",
     name: "tiktok",
     title: "Invest in investments",
     content: "Call the bank to talk about investments"
@@ -26,7 +26,7 @@ const data = [{
     id: 4,
     icon: "⭕️",
     status: "open",
-    widget: "fab fa-youtube-square fa-10x",
+    widget: "fab fa-youtube-square fa-2x",
     name: "youtube",
     title: "Daily reading",
     content: "Finish reading Intro to UI/UX"
@@ -35,7 +35,7 @@ const data = [{
     id: 5,
     icon: "⭕️",
     status: "open",
-    widget: "fab fa-spotify fa-10x",
+    widget: "fab fa-spotify fa-2x",
     name: "spotify",
     title: "Daily reading",
     content: "Finish reading Intro to UI/UX"
