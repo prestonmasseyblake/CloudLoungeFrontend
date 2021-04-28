@@ -240,6 +240,7 @@ const EditPage = (props) => {
             </div>
             
                         </DropWrapper>
+                        {RedirectPage()}
         </div>
         
     )

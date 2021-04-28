@@ -96,9 +96,9 @@ const Lounge = (props) => {
     return (
         <div >
             <div className='container-fluid'>
-            {/* <button className="btn btn-primary btn-success">
+            <button className="btn btn-primary btn-success">
             <Link to={`/edit/${page.slug}`}>Editer</Link>
-            </button> */}
+            </button>
             <h1 className="text-center">{page.name}</h1>
             <div className='page-picture'><img src={page.picture} />
             </div>
