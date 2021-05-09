@@ -20,9 +20,14 @@ const NavBarFinal =({}) => {
   const [activeMenu, setActiveMenu] = useState('main');
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
+  const [isAuth, setIsAuth] = useState(false);
+
 
   useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
+    if (localStorage.getItem('token') !== null) {
+      setIsAuth(true);
+    }
   }, [])
   function calcHeight(el) {
     const height = el.offsetHeight;
@@ -37,7 +42,27 @@ const NavBarFinal =({}) => {
          ☁️
         </div>
         </Link>
-        
+        {isAuth === true ? (
+          <Fragment>
+            {' '}
+            <li>
+              <Link to='/dashboard'>Dashboard</Link>
+            </li>
+            <li>
+              <Link to='/logout'>Logout</Link>
+            </li>
+          </Fragment>
+        ) : (
+          <Fragment>
+            {' '}
+            <li>
+              <Link to='/login'>Login</Link>
+            </li>
+            <li>
+              <Link to='/signup'>Signup</Link>
+            </li>
+          </Fragment>
+        )}
           <Link style={{ textDecoration: 'none' }} to='/create' ><NavItem icon={<PlusIcon/>} /></Link>
           <Link style={{ textDecoration: 'none' }} to='/' ><NavItem icon={< BellIcon/>} /></Link>
           <NavItem icon={<MessengerIcon/>} />

@@ -7,6 +7,7 @@ import Search from '../components/Search';
 function Home() {
     const[searchResponses,setSearchResponses]=useState();
     const[showSearch, setShowSearch] = useState(false);
+    // const popularUrl = 'https://cloudloungebackend.herokuapp.com/api/create/lounges';
     const popularUrl = 'https://cloudloungebackend.herokuapp.com/api/create/lounges';
     
     const handleSubmit = (search) => {
