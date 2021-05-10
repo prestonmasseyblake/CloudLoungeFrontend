@@ -5,7 +5,7 @@ const Logout = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') == null) {
-      window.location.replace('http://localhost:3000/login');
+      window.location.replace('https://cloudloungefrontend.herokuapp.com/login');
     } else {
       setLoading(false);
     }
@@ -14,7 +14,7 @@ const Logout = () => {
   const handleLogout = e => {
     e.preventDefault();
 
-    fetch('https://cloudloungefrontend.herokuapp.com/api/v1/users/auth/logout/', {
+    fetch('https://cloudloungebackend.herokuapp.com/api/v1/users/auth/logout/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const Logout = () => {
       .then(data => {
         console.log(data);
         localStorage.clear();
-        window.location.replace('http://localhost:3000/login');
+        window.location.replace('https://cloudloungefrontend.herokuapp.com/login');
       });
   };
 

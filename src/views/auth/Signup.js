@@ -9,7 +9,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/dashboard');
+      window.location.replace('https://cloudloungefrontend.herokuapp.com/dashboard');
     } else {
       setLoading(false);
     }
@@ -24,7 +24,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch('https://cloudloungefrontend.herokuapp.com/api/v1/users/auth/register/', {
+    fetch('https://cloudloungebackend.herokuapp.com/api/v1/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ const Signup = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000/dashboard');
+          window.location.replace('https://cloudloungefrontend.herokuapp.com/dashboard');
         } else {
           setEmail('');
           setPassword1('');
