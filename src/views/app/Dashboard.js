@@ -6,9 +6,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') === null) {
-      window.location.replace('http://localhost:3000/login');
+      window.location.replace('https://cloudloungefrontend.herokuapp.com/login');
     } else {
-      fetch('http://127.0.0.1:8000/api/v1/users/auth/user/', {
+      fetch('https://cloudloungebackend.herokuapp.com/api/v1/users/auth/user/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -34,5 +34,4 @@ const Dashboard = () => {
     </div>
   );
 };
-
 export default Dashboard;
