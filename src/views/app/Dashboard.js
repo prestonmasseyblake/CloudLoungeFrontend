@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-
+import './Dashboard.css';
 const Dashboard = () => {
   const [userEmail, setUserEmail] = useState('');
   const [loading, setLoading] = useState(true);
@@ -17,6 +17,7 @@ const Dashboard = () => {
       })
         .then(res => res.json())
         .then(data => {
+          console.log(data);
           setUserEmail(data.email);
           setLoading(false);
         });

@@ -41,7 +41,7 @@ const NavBarFinal =({}) => {
         </div>
         </Link>
         {isAuth === true ? ( 
-        <div>
+        <>
         
         <Link style={{ textDecoration: 'none' }} to='/create' ><NavItem icon={<PlusIcon/>} /></Link>
           <Link style={{ textDecoration: 'none' }} to='/' ><NavItem icon={< BellIcon/>} /></Link>
@@ -80,11 +80,11 @@ const NavBarFinal =({}) => {
             
             </NavItem>
           <div className='profile'>
-          
+          <Link to='/dashboard'>
             <img src={Peep} />
-          
+            </Link>
             </div>
-            </div>
+            </>
         ): (
           <div className='profile'>
           <Link to='/login'>L</Link>
