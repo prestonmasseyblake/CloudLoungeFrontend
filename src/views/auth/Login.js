@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {Link} from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +16,6 @@ const Login = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-
     const user = {
       email: email,
       password: password
@@ -43,7 +42,6 @@ const Login = () => {
         }
       });
   };
-
   return (
     <div>
       {loading === false && <h1>Login</h1>}
@@ -70,9 +68,10 @@ const Login = () => {
           <br />
           <input type='submit' value='Login' />
         </form>
+      
       )}
+<div>Dont already have an account <Link to='/signup'>Signup</Link></div>
     </div>
   );
 };
-
 export default Login;

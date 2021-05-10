@@ -1,13 +1,17 @@
 import React from 'react'
 import './Nav.css';
 import { ReactComponent as ArrowIcon } from '../icons/arrow.svg';
-const Nav = ({name}) => {
+import {Link} from 'react-router-dom';
+const Nav = ({name, slug}) => {
     return (
         <div className='nav'>
             <div className='nav-container'>
                 <div>
                     <ArrowIcon/>
                 </div>
+                <button className="btn btn-primary btn-success">
+                <Link to={`/edit/${slug}`}>Editer</Link>
+                </button>
                 <div>
                 <h3 className='textcenter'>{name}</h3>
                 </div>
@@ -15,5 +19,4 @@ const Nav = ({name}) => {
         </div>
     )
 }
-
 export default Nav;

@@ -15,13 +15,11 @@ import { ReactComponent as BoltIcon } from './icons/bolt.svg';
 import { CSSTransition } from 'react-transition-group';
 import DropdownItem from './NavComponents/DropDownItem';
 
-
 const NavBarFinal =({}) => {
   const [activeMenu, setActiveMenu] = useState('main');
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
   const [isAuth, setIsAuth] = useState(false);
-
 
   useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
@@ -42,28 +40,10 @@ const NavBarFinal =({}) => {
          ☁️
         </div>
         </Link>
-        {isAuth === true ? (
-          <Fragment>
-            {' '}
-            <li>
-              <Link to='/dashboard'>Dashboard</Link>
-            </li>
-            <li>
-              <Link to='/logout'>Logout</Link>
-            </li>
-          </Fragment>
-        ) : (
-          <Fragment>
-            {' '}
-            <li>
-              <Link to='/login'>Login</Link>
-            </li>
-            <li>
-              <Link to='/signup'>Signup</Link>
-            </li>
-          </Fragment>
-        )}
-          <Link style={{ textDecoration: 'none' }} to='/create' ><NavItem icon={<PlusIcon/>} /></Link>
+        {isAuth === true ? ( 
+        <div>
+        
+        <Link style={{ textDecoration: 'none' }} to='/create' ><NavItem icon={<PlusIcon/>} /></Link>
           <Link style={{ textDecoration: 'none' }} to='/' ><NavItem icon={< BellIcon/>} /></Link>
           <NavItem icon={<MessengerIcon/>} />
           <NavItem icon={< CogIcon/>}>
@@ -100,12 +80,42 @@ const NavBarFinal =({}) => {
             
             </NavItem>
           <div className='profile'>
-            <img src={Peep} />
-          </div>
-          </div>
           
+            <img src={Peep} />
+          
+            </div>
+            </div>
+        ): (
+          <div className='profile'>
+          <Link to='/login'>L</Link>
+          </div>
+        )}
+          
+          </div>
       </nav>
     </>
   )
 };
 export default NavBarFinal;
+
+
+
+{/* <Fragment>
+            {' '}
+            <li>
+              <Link to='/dashboard'>Dashboard</Link>
+            </li>
+            <li>
+              <Link to='/logout'>Logout</Link>
+            </li>
+          </Fragment>
+        ) : (
+          <Fragment>
+            {' '}
+            <li>
+              <Link to='/login'>Login</Link>
+            </li>
+            <li>
+              <Link to='/signup'>Signup</Link>
+            </li>
+          </Fragment> */}

@@ -16,6 +16,7 @@ const EditPage = (props) => {
     const [amazon, setAmazon] = useState(false);
     const [spotify, setSpotify] = useState(false);
     const [tiktok, setTiktok] = useState(false);
+    const [videos, SetVideos] = useState(false);
     const [redirect,setRedirect] = useState(false);
     //setting the info from the api
     const [page, setPage] = useState({});
@@ -138,13 +139,14 @@ const EditPage = (props) => {
         'isAmazon' :amazon,
         'isBitcoin' :bitcoin,
         'isTiktok': tiktok,
-        'isSpotify':spotify   
+        'isSpotify':spotify,
+        'videos': [{'title': 'sirmister'},{'title': 'sirmister'}]   
         };
         console.log('this is the context data',data);
         axios.defaults.withCredentials = true;
         //axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('content');
         axios({
-        url: `https://cloudloungebackend.herokuapp.com/api/create/update/${slugger}`,
+        url: `http://127.0.0.1:8000/api/create/update/${slugger}`,
         data: data,
         method: 'put',
         headers: new Headers({"Content-Type": "application/json", 'X-CSRFToken': cookies.csrftoken})

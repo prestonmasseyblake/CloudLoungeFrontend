@@ -98,12 +98,8 @@ const Lounge = (props) => {
 
     return (
         <div >
-            <SubNav name={name}/>
+            <SubNav name={name} slug={page.slug}/>
             <div className='container-fluid'>
-            <button className="btn btn-primary btn-success">
-            <Link to={`/edit/${page.slug}`}>Editer</Link>
-            </button>
-            <h1 className="text-center">{page.name}</h1>
             <div className='page-picture'><img src={page.picture} />
             </div>
             {displayYoutube()}
@@ -111,7 +107,6 @@ const Lounge = (props) => {
             {displayBitcoin()}
             {displayTiktok()}
             {displaySpotify()}
-            
             </div>
         </div>
     )

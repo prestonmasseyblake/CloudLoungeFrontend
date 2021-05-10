@@ -1,6 +1,6 @@
 .page-picture, img {
-width: auto;
-  max-width: 500px;
-  height: auto;
-  max-height: 300px;
+width: 100%;
+max-width: 100%;
+height: auto;
+max-height: 300px;
 }

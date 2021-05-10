@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {Link} from 'react-router-dom';
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password1, setPassword1] = useState('');
@@ -81,6 +81,7 @@ const Signup = () => {
         <br />
         <input type='submit' value='Signup' />
       </form>
+      <div><p>Already have an account <Link to='/login'>Login</Link></p></div>
     </div>
   );
 };
