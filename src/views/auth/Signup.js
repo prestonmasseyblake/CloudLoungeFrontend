@@ -24,7 +24,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch('http://127.0.0.1:8000/api/v1/users/auth/register/', {
+    fetch('https://cloudloungefrontend.herokuapp.com/api/v1/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
